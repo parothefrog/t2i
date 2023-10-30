@@ -6,6 +6,8 @@ Python Script to turn Discord DMs (Copy + Paste) into images that look fancy
 
 ```pip install -r requirements.txt```
 
+---
+
 #Usage
 
 * Open the script & make sure to put in the names of the two participants (replaced in line 34 & 42).
@@ -14,8 +16,12 @@ Python Script to turn Discord DMs (Copy + Paste) into images that look fancy
 * Run script.
 * Get image
 
+---
+
 #Current known bugs
 * Image is too short. Added a 500 pixel bottom to it, this does not change dynamically, but my skillz are 2 sucky to fix atm
+
+---
 
 #To do
 * Make names dynamic (write some parser to find the first names, detect it via timestamps maybe?)
