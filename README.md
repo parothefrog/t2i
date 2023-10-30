@@ -31,4 +31,4 @@ Python Script to turn Discord DMs (Copy + Paste) into images that look fancy
 
 ---
 
-*Thanks to my partner, GPT4, for helping write this script. 1 up homie, on god, you da best #KebabGang #GPT4 #HelpMeINeedToStop
+<sup>*Thanks to my partner, GPT4, for helping write this script. 1 up homie, on god, you da best #KebabGang #GPT4 #HelpMeINeedToStop*</sup>
