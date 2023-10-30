@@ -2,16 +2,16 @@ from PIL import Image, ImageDraw, ImageFont
 import argparse
 parser = argparse.ArgumentParser(
     prog="Transcript 2 Image",
-    description="Python Script to turn chat transcripts (Copy + Paste) into images that look fancy",
+    description="Python Script to turn chat transcripts (Copy + Paste) into images that look fancy.",
     epilog="Have fun, and don't leak too much secrets"
 )
-parser.add_argument("ACC1", help="Display name of the first user present in the transcript",
+parser.add_argument("ACC1", help="Display name of the first user present in the transcript !!THIS IS CASE SENSITIVE!!",
                     type=str,
                     default='NULL')
 parser.add_argument("ACC1A", help="Alignment of their chat bubbles (only 'left' or 'right' accepted)",
                     type=str,
                     choices=("left", "right"))
-parser.add_argument("ACC2",help="Display name of the second user present in the transcript",
+parser.add_argument("ACC2",help="Display name of the second user present in the transcript !!THIS IS CASE SENSITIVE!!",
                     type=str,
                     default='NULL')
 parser.add_argument("ACC2A", help="Alignment of their chat bubbles (only 'left' or 'right' accepted)",
@@ -19,6 +19,8 @@ parser.add_argument("ACC2A", help="Alignment of their chat bubbles (only 'left' 
                     choices=("left", "right"))
 parser.add_argument("input_file", help="Your transcript file",
                     type=str)
+parser.add_argument("-nb","--no-banner", help="Disable banner printing", action="store_true", dest="nb", default=False)
+
 args = parser.parse_args()
 
 ACC1 = args.ACC1
@@ -27,18 +29,20 @@ ACC2 = args.ACC2
 ACC2A = args.ACC2A
 input_file = args.input_file
 
-
-print(r"""
-          /$$$$$$$$ /$$$$$$  /$$$$$$          
-         |__  $$__//$$__  $$|_  $$_/          
- /$$$$ /$$$$| $$  |__/  \ $$  | $$ /$$$$ /$$$$
-|____/|____/| $$    /$$$$$$/  | $$|____/|____/
- /$$$$ /$$$$| $$   /$$____/   | $$ /$$$$ /$$$$
-|____/|____/| $$  | $$        | $$|____/|____/
-            | $$  | $$$$$$$$ /$$$$$$          
-            |__/  |________/|______/          
-                 v1.0 by PARO                                         
-                                              """)
+if args.nb == True:
+    print("")
+else:
+    print(r"""
+              /$$$$$$$$ /$$$$$$  /$$$$$$          
+             |__  $$__//$$__  $$|_  $$_/          
+     /$$$$ /$$$$| $$  |__/  \ $$  | $$ /$$$$ /$$$$
+    |____/|____/| $$    /$$$$$$/  | $$|____/|____/
+     /$$$$ /$$$$| $$   /$$____/   | $$ /$$$$ /$$$$
+    |____/|____/| $$  | $$        | $$|____/|____/
+                | $$  | $$$$$$$$ /$$$$$$          
+                |__/  |________/|______/          
+                     v1.0 by PARO                                         
+                                                  """)
 print('Making a picture of your transcript, with the following values:')
 print('Account 1: ', ACC1)
 print('Align: ', ACC1A)
