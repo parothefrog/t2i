@@ -26,6 +26,7 @@ Python Script to turn chat transcripts (Copy + Paste) into images that look fanc
 * Make different styles you can chose as you run script, to make it look fancy pancy
 * Emoji Support
 * Error Messages
+* Multi User Support
 
 ---
 
