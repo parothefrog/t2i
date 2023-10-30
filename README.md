@@ -6,7 +6,8 @@ Python Script to turn Discord DMs (Copy + Paste) into images that look fancy
 
 ```pip install -r requirements.txt```
 
-<sup>I swear, it's just Pillow, why did I even make a requirements.txt?</sup>
+<sub> <sub> I swear, it's legit just Pillow, why does this file exist? </sub> </sub>
+
 ---
 
 ## Usage
