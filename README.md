@@ -1,4 +1,4 @@
-# T2I
+# T2I (Transcript 2 Image)
 Python Script to turn Discord DMs (Copy + Paste) into images that look fancy  
 
 
