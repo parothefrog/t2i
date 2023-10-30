@@ -29,6 +29,7 @@ Python Script to turn Discord DMs (Copy + Paste) into images that look fancy
 * Make names dynamic (write some parser to find the first names, detect it via timestamps maybe?)
 * Make different styles you can chose as you run script, to make it look fancy pancy
 * once dynamic names is inserted, remove hardcoding of file name, and allow this as an arg, or have the python script ask for it when it runs
+* Emoji Support
 * cool banner when program runs + error logging? 
 
 ---
