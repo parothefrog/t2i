@@ -30,4 +30,4 @@ Python Script to turn chat transcripts (Copy + Paste) into images that look fanc
 ---
 
 <sup>*Thanks to my partner, GPT4, for helping write this script. 1 up homie, on god, you da best #KebabGang #GPT4 #HelpMeINeedToStop*</sup>
-<sup><sup>*Thanks to my homie, Zopazz, for telling me to use argparse instead of input*</sup></sup>
+<sup>*Also thanks to my homie, Zopazz, for telling me to use argparse instead of input*</sup>
