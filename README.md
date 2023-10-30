@@ -12,11 +12,7 @@ Python Script to turn chat transcripts (Copy + Paste) into images that look fanc
 
 ## Usage
 
-* Open the script & make sure to put in the names of the two participants (replaced in line 34 & 42).
-    The script will monitor for these things to break the bubbles, so each time the string you define shows up, it will do a new bubble
-* Make sure the transcript of your discord DM is in a file called "transcript.txt"
-* Adjust colors, if you want.
-* Run script.
+* See the help page using ```python3 t2i.py -h```
 * Get image
 
 ---
