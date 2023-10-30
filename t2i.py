@@ -1,4 +1,50 @@
 from PIL import Image, ImageDraw, ImageFont
+import argparse
+parser = argparse.ArgumentParser(
+    prog="Transcript 2 Image",
+    description="Python Script to turn chat transcripts (Copy + Paste) into images that look fancy",
+    epilog="Have fun, and don't leak too much secrets"
+)
+parser.add_argument("ACC1", help="Display name of the first user present in the transcript",
+                    type=str,
+                    default='NULL')
+parser.add_argument("ACC1A", help="Alignment of their chat bubbles (only 'left' or 'right' accepted)",
+                    type=str,
+                    choices=("left", "right"))
+parser.add_argument("ACC2",help="Display name of the second user present in the transcript",
+                    type=str,
+                    default='NULL')
+parser.add_argument("ACC2A", help="Alignment of their chat bubbles (only 'left' or 'right' accepted)",
+                    type=str,
+                    choices=("left", "right"))
+parser.add_argument("input_file", help="Your transcript file",
+                    type=str)
+args = parser.parse_args()
+
+ACC1 = args.ACC1
+ACC1A = args.ACC1A
+ACC2 = args.ACC2
+ACC2A = args.ACC2A
+input_file = args.input_file
+
+
+print(r"""
+          /$$$$$$$$ /$$$$$$  /$$$$$$          
+         |__  $$__//$$__  $$|_  $$_/          
+ /$$$$ /$$$$| $$  |__/  \ $$  | $$ /$$$$ /$$$$
+|____/|____/| $$    /$$$$$$/  | $$|____/|____/
+ /$$$$ /$$$$| $$   /$$____/   | $$ /$$$$ /$$$$
+|____/|____/| $$  | $$        | $$|____/|____/
+            | $$  | $$$$$$$$ /$$$$$$          
+            |__/  |________/|______/          
+                 v1.0 by PARO                                         
+                                              """)
+print('Making a picture of your transcript, with the following values:')
+print('Account 1: ', ACC1)
+print('Align: ', ACC1A)
+print('Account 2: ', ACC2)
+print('Align: ', ACC2A)
+print('Transcript File: ', input_file)
 
 def wrap_text(text, font, max_width):
     """Wrap the provided text within the specified width."""
@@ -31,22 +77,22 @@ def generate_chat_image(transcript):
     alignment = None
     
     for line in transcript_lines:
-        if "COMPROMISED ACCOUNT" in line:
+        if ACC1 in line:
             if temp_message:
                 message_lines = wrap_text(' '.join(temp_message), regular_font, max_bubble_width - 2*extra_bubble_padding)
                 wrapped_content.append((message_lines, message_color, alignment, sender_name))
                 temp_message = []
             sender_name = line
             message_color = 'lightgray'
-            alignment = 'left'
-        elif "PARO" in line:
+            alignment = ACC1A
+        elif ACC2 in line:
             if temp_message:
                 message_lines = wrap_text(' '.join(temp_message), regular_font, max_bubble_width - 2*extra_bubble_padding)
                 wrapped_content.append((message_lines, message_color, alignment, sender_name))
                 temp_message = []
             sender_name = line
             message_color = 'lightgray'
-            alignment = 'right'
+            alignment = ACC2A
         else:
             temp_message.append(line)
             
@@ -93,9 +139,12 @@ def generate_chat_image(transcript):
 
         y_position += bubble_height + bubble_spacing
 
-    image.save('chat_image_with_titles.png')
+    image.save('chat_transcript.png')
 
 # Read the transcript from the file and call the function
-with open('transcript.txt', 'r') as f:
+with open(args.input_file, 'r') as f:
     transcript = f.read()
     generate_chat_image(transcript)
+
+print("")
+print('Output file "chat_transcript.png" generated. Enjoy!')
