@@ -2,7 +2,7 @@
 Python Script to turn chat transcripts (Copy + Paste) into images that look fancy  
 
 
-#Installation
+## Installation
 
 ```pip install -r requirements.txt```
 
