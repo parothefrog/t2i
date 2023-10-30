@@ -8,7 +8,7 @@ Python Script to turn Discord DMs (Copy + Paste) into images that look fancy
 
 ---
 
-#Usage
+## Usage
 
 * Open the script & make sure to put in the names of the two participants (replaced in line 34 & 42).
 * Make sure the transcript of your discord DM is in a file called "transcript.txt"
@@ -18,12 +18,12 @@ Python Script to turn Discord DMs (Copy + Paste) into images that look fancy
 
 ---
 
-#Current known bugs
+## Current known bugs
 * Image is too short. Added a 500 pixel bottom to it, this does not change dynamically, but my skillz are 2 sucky to fix atm
 
 ---
 
-#To do
+## To do
 * Make names dynamic (write some parser to find the first names, detect it via timestamps maybe?)
 * Make different styles you can chose as you run script, to make it look fancy pancy
 * once dynamic names is inserted, remove hardcoding of file name, and allow this as an arg, or have the python script ask for it when it runs
